@@ -1,0 +1,136 @@
+@import url(/css/reset.css);
+@import url(/css/fonts.css);
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan-blue: hsl(178, 100%, 50%);
+
+    --very-dark-blue: hsl(217, 54%, 11%);
+    --very-dark-blue-c: hsl(216, 50%, 16%);
+    --very-dark-blue-l: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: var(--very-dark-blue);
+    display: grid;
+    align-items: center;
+    place-content: center;
+    color: var(--soft-blue);
+    font-family: 'Outfit', sans-serif;
+}
+
+.nft-card {
+    width: 90%;
+    min-width: 310px;
+    max-width: 370px;
+    background-color: var(--very-dark-blue-c);
+    border-radius: .5rem;
+    padding: 25px;
+    margin: 0 auto;
+}
+
+.nft-card__title {
+    color: var(--white);
+    margin-block: 1rem;
+    font-weight: 600;
+}
+
+.nft-card__title:hover {
+    color: var(--cyan-blue);
+    cursor: pointer;
+}
+
+.nft-card__paragraph {
+    font-weight: 300;
+    font-size: 1rem;
+    font-size:
+        clamp(1rem, 0.9107142857142857rem + 0.4464285714285714vw, 1.125rem);
+    color: var(--soft-blue);
+}
+
+.nft-card__img {
+    margin: 0 auto;
+    max-width: 300px;
+    overflow: hidden;
+    border-radius: .5rem;
+    position: relative;
+    background-color: var(--cyan-blue);
+
+    &::after {
+        content: url(/images/icon-view.svg);
+        position: absolute;
+        top: 45%;
+        left: 40%;
+        visibility: hidden;
+    }
+}
+
+.nft-card__img:hover {
+    & img {
+        opacity: .5;
+    }
+
+    &::after {
+        visibility: visible;
+    }
+}
+
+.nft-card__info span::before {
+    display: inline-block;
+    margin-right: .5rem;
+    position: relative;
+    top: 3px;
+}
+
+.nft-card__info span:first-child {
+    color: var(--cyan-blue);
+}
+
+.nft-card__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--very-dark-blue-l);
+
+    & span {
+        position: relative;
+    }
+
+    & span:first-child::before {
+        content: url(/images/icon-ethereum.svg);
+    }
+
+    & span:last-child::before {
+        content: url(/images/icon-clock.svg);
+    }
+}
+
+.ntf-card__user-info {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    margin-top: 1rem;
+
+    & img {
+        margin-right: 1rem;
+        filter: drop-shadow(0px 0px .8px var(--white));
+        width: 35px;
+    }
+
+    & span {
+        color: var(--white);
+    }
+
+    & span:hover {
+        cursor: pointer;
+        color: var(--cyan-blue);
+    }
+}
+
+/* @media (width >=48em) {
+    body {
+        color: red;
+    }
+} */
